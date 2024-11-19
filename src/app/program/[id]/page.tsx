@@ -18,11 +18,11 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
         {/* Navigation Buttons */}
         <div className="flex justify-between w-full">
-          <button className="flex gap-2 items-center px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
+          <button className="flex gap-2 items-center button-primary">
             <CircleChevronRight />
             <span>المجلس السابق</span>
           </button>
-          <button className="flex gap-2 items-center px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
+          <button className="flex gap-2 items-center button-primary">
             <span> المجلس التالي</span>
             <CircleChevronLeft />
           </button>

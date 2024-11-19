@@ -3,6 +3,7 @@ import Link from "next/link";
 import SideBarCard from "./SideBarCard";
 import { firstYearData } from "@/utils/AppData";
 import { usePathname } from "next/navigation";
+import CheckBtn from "./CheckBtn";
 
 function SideBar() {
   // Get the current pathname
@@ -18,18 +19,25 @@ function SideBar() {
         const isSelected = majles.id === selectedId;
 
         return (
-          <Link key={majles.id} href={`/program/${majles.id}`}>
-            <div
-              className={`${isSelected ? "bg-neutral-600" : "bg-transparent"}`}
-            >
+          <div
+            key={majles.id}
+            className={`flex items-center  p-4 border-b border-white/20 gap-4  hover:bg-neutral-700 ${
+              isSelected ? "bg-neutral-600" : "bg-transparent"
+            }`}
+          >
+            <div className="cursor-pointer">
+              <CheckBtn isChecked={majles.isChecked} />
+            </div>
+
+            <Link href={`/program/${majles.id}`}>
               <SideBarCard
                 title={majles.title}
                 id={majles.id}
                 isChecked={majles.isChecked}
                 duration={majles.duration}
               />
-            </div>
-          </Link>
+            </Link>
+          </div>
         );
       })}
     </div>

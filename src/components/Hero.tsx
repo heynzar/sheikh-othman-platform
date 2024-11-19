@@ -18,9 +18,7 @@ const Hero = () => {
 
         <div className="flex gap-4 mt-2 font-bold">
           <Link href="/program">
-            <button className="px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
-              إبدأ من هنا
-            </button>
+            <button className="button-primary">إبدأ من هنا</button>
           </Link>
           <Link href="/about">
             <button className="px-5 py-2 border-2 border-yellow-400 text-yellow-400 rounded-lg  hover:scale-105 active:scale-100 transition-transform">
