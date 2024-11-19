@@ -1,6 +1,7 @@
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+import { firstYearData } from "@/data/main";
 
-export default function Page() {
+export default function Page({ params }: { params: { id: string } }) {
   return (
     <section className="w-full h-full p-5 overflow-y-scroll">
       <div className="max-w-screen-md w-full mx-auto flex flex-col gap-5 items-center">
@@ -9,7 +10,7 @@ export default function Page() {
             <iframe
               className="absolute rounded-xl top-0 left-0 w-full h-full border-0"
               loading="lazy"
-              srcDoc="<style>
+              srcDoc={`<style>
       * {
       padding: 0;
       margin: 0;
@@ -34,11 +35,17 @@ export default function Page() {
         transform: scale(1.2);
       }
     </style>
-    <a href='https://www.youtube.com/embed/FbUMNqRK7nM?autoplay=1'>
-      <img src='https://img.youtube.com/vi/FbUMNqRK7nM/sddefault.jpg' alt='abc'>
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#facc15' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
-    "
-              src="https://www.youtube.com/embed/FbUMNqRK7nM"
+    <a href='https://www.youtube.com/embed/${
+      firstYearData[Number(params.id) - 1].videoLink
+    }?autoplay=1'>
+      <img src='http://localhost:3000/${params.id}.jpg' alt='${
+                firstYearData[Number(params.id) - 1].title
+              }'>
+<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
+    `}
+              src={`https://www.youtube.com/embed/${
+                firstYearData[Number(params.id) - 1].videoLink
+              }`}
               title="abc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -60,7 +67,7 @@ export default function Page() {
         <div className="p-0.5 rounded-[10px]  bg-neutral-700 w-full max-w-screen-md ">
           <iframe
             loading="lazy"
-            src="https://turathkw.com/content/pdf/88e731267a9adbf7dd4aa19270abca94.pdf"
+            src={`${firstYearData[Number(params.id) - 1].pdfLink}`}
             className="w-full h-[760px] rounded-lg outline-none"
             allow="autoplay"
           ></iframe>

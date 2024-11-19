@@ -1,15 +1,34 @@
+"use client";
 import Link from "next/link";
 import SideBarCard from "./SideBarCard";
-
-const data = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }];
+import { firstYearData } from "@/data/main";
+import { usePathname } from "next/navigation";
 
 function SideBar() {
+  // Get the current pathname
+  const pathname = usePathname();
+
+  // Extract the dynamic ID from the URL (e.g., /program/[id])
+  const selectedId = Number(pathname.split("/").pop());
+
   return (
     <div className="h-full overflow-y-scroll min-w-[320px] bg-neutral-800">
-      {data.map((a) => {
+      {firstYearData.map((majles) => {
+        // Check if the current card matches the selected ID
+        const isSelected = majles.id === selectedId;
+
         return (
-          <Link href={`/program/${a.id}`}>
-            <SideBarCard />
+          <Link key={majles.id} href={`/program/${majles.id}`}>
+            <div
+              className={`${isSelected ? "bg-neutral-600" : "bg-transparent"}`}
+            >
+              <SideBarCard
+                title={majles.title}
+                id={majles.id}
+                isChecked={majles.isChecked}
+                duration={majles.duration}
+              />
+            </div>
           </Link>
         );
       })}
