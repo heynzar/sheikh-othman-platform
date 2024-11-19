@@ -10,23 +10,12 @@ const HeaderTwo = () => {
           </h1>
         </Link>
 
-        <ul className="flex gap-6">
-          <Link href="/about">
-            <li className="hover:text-yellow-400 transition-colors text-lg">
-              البرنامج
-            </li>
-          </Link>
-          <Link href="/about-sheikh">
-            <li className="hover:text-yellow-400 transition-colors text-lg">
-              عن الشيخ
-            </li>
-          </Link>
-          <li className="hover:text-yellow-400 transition-colors text-lg">
-            <a href="https://othmanalkamees.com/" target="_blank">
-              الموقع الرسمي
-            </a>
-          </li>
-        </ul>
+        <div className="flex gap-2 items-center">
+          <h2>38%</h2>
+          <div className="bg-neutral-600 h-2 w-56 rounded-2xl flex justify-end">
+            <div className="bg-yellow-400 h-2 w-24 rounded-2xl"></div>
+          </div>
+        </div>
       </nav>
     </header>
   );

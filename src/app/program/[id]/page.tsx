@@ -1,7 +1,9 @@
+import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+
 export default function Page() {
   return (
     <section className="w-full h-full p-5 overflow-y-scroll">
-      <div className="max-w-screen-md w-full mx-auto flex flex-col gap-10 items-center">
+      <div className="max-w-screen-md w-full mx-auto flex flex-col gap-5 items-center">
         <div className="w-full max-h-min bg-neutral-700 rounded-xl  aspect-video shadow-md m-8">
           <div className="relative pb-[56.15%] h-0 overflow-hidden">
             <iframe
@@ -34,8 +36,7 @@ export default function Page() {
     </style>
     <a href='https://www.youtube.com/embed/FbUMNqRK7nM?autoplay=1'>
       <img src='https://img.youtube.com/vi/FbUMNqRK7nM/sddefault.jpg' alt='abc'>
-      <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#facc15' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
-    </a>
+<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#facc15' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
     "
               src="https://www.youtube.com/embed/FbUMNqRK7nM"
               title="abc"
@@ -46,11 +47,13 @@ export default function Page() {
         </div>
 
         <div className="flex justify-between w-full">
-          <button className="px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
-            المجلس السابق
+          <button className="flex gap-2 items-center px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
+            <CircleChevronRight />
+            <span>المجلس السابق</span>
           </button>
-          <button className="px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
-            المجلس التالي
+          <button className="flex gap-2 items-center px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform">
+            <span> المجلس التالي</span>
+            <CircleChevronLeft />
           </button>
         </div>
 
