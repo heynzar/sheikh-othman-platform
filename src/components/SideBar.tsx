@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import SideBarCard from "./SideBarCard";
-import { firstYearData } from "@/data/main";
+import { firstYearData } from "@/utils/AppData";
 import { usePathname } from "next/navigation";
 
 function SideBar() {

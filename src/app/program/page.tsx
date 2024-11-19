@@ -1,5 +1,5 @@
 import ProgramCard from "@/components/ProgramCard";
-import { firstYearData } from "@/data/main";
+import { firstYearData } from "@/utils/AppData";
 import Link from "next/link";
 
 export default function Home() {
