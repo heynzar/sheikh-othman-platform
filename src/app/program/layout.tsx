@@ -9,8 +9,8 @@ function layout({
 }>) {
   return (
     <>
-      <HeaderTwo />
       <CheckProvider>
+        <HeaderTwo />
         <main className="flex h-[89vh]">
           <SideBar />
           {children}

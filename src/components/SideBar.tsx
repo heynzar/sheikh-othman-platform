@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import SideBarCard from "./SideBarCard";
-import { firstYearData } from "@/utils/AppData";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
 import { useCheckContext } from "@/context/CheckContext";

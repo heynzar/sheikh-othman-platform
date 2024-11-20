@@ -6,7 +6,7 @@ export const firstYearData = [
     pdfLink:
       "https://drive.google.com/file/d/1TrY0quPjOpUW1jDJHFjn618x4BTJuh1M/preview",
     duration: "1:28:26",
-    isChecked: true,
+    isChecked: false,
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const firstYearData = [
     pdfLink:
       "https://drive.google.com/file/d/1ndihnKl3pxUCoyulzgcE5ZqTcwn9sDEB/preview",
     duration: "1:59:55",
-    isChecked: true,
+    isChecked: false,
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const firstYearData = [
     pdfLink:
       "https://drive.google.com/file/d/1NOEeVD2K0G7sZ26ziUInDEC4Y0p7eYG5/preview",
     duration: "26:52",
-    isChecked: true,
+    isChecked: false,
   },
   {
     id: 4,
