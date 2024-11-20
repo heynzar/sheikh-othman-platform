@@ -74,7 +74,6 @@ function SideBar() {
                 <SideBarCard
                   title={majles.title}
                   id={majles.id}
-                  isChecked={majles.isChecked}
                   duration={majles.duration}
                 />
               </Link>

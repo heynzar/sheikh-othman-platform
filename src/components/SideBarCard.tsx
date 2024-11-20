@@ -4,10 +4,9 @@ type ProgramCard = {
   id: number;
   title: string;
   duration: string;
-  isChecked: boolean;
 };
 
-function SideBarCard({ id, title, duration, isChecked }: ProgramCard) {
+function SideBarCard({ id, title, duration }: ProgramCard) {
   return (
     <div className="flex flex-col w-[240px] cursor-pointer">
       <h2>

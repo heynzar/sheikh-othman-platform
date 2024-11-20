@@ -13,7 +13,7 @@ const HeaderTwo = () => {
     }
   });
 
-  let result = Math.floor((totlaChecked / total) * 100);
+  const result = Math.floor((totlaChecked / total) * 100);
 
   return (
     <header className="border-b border-neutral-500">
@@ -24,7 +24,7 @@ const HeaderTwo = () => {
           </h1>
         </Link>
 
-        <div className="flex gap-10   items-center ">
+        <div className="flex gap-10 items-center ">
           <Link href="/program">
             <button className="font-bold text-lg hover:text-yellow-400 transition-colors">
               المجالس

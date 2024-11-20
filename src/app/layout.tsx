@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Amiri, Inter } from "next/font/google";
+import { Amiri } from "next/font/google";
 import "./globals.css";
 
 const amiri = Amiri({
   subsets: ["arabic"],
   variable: "--amiri",
   weight: ["400", "700"],
-});
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--inter",
-  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
