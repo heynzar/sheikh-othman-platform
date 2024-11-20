@@ -3,7 +3,6 @@ import { firstYearData } from "@/utils/AppData";
 import { redirect } from "next/navigation";
 
 import Link from "next/link";
-
 export default async function Page({
   params,
 }: {
@@ -66,6 +65,7 @@ export default async function Page({
             ></iframe>
           </div>
         </div>
+
         {/* Navigation Buttons */}
         <div className="flex justify-between w-full">
           <Link href={`/program/${Math.max(1, Number(id) - 1)}`}>
@@ -85,10 +85,11 @@ export default async function Page({
         {/* PDF Viewer */}
         <div className="p-0.5 rounded-[10px] bg-neutral-700 w-full max-w-screen-md">
           <iframe
-            loading="lazy"
             src={`${videoData.pdfLink}`}
-            className="w-full h-[760px] rounded-lg outline-none"
+            width="640"
+            height="480"
             allow="autoplay"
+            className="w-full h-[760px] rounded-lg outline-none"
           ></iframe>
         </div>
       </div>
