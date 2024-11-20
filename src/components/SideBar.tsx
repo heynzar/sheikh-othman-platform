@@ -4,6 +4,7 @@ import SideBarCard from "./SideBarCard";
 import { firstYearData } from "@/utils/AppData";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
+import { useCheckContext } from "@/context/CheckContext";
 
 function SideBar() {
   // Get the current pathname
@@ -12,9 +13,19 @@ function SideBar() {
   // Extract the dynamic ID from the URL (e.g., /program/[id])
   const selectedId = Number(pathname.split("/").pop());
 
+  const { dataCheck, setDataCheck } = useCheckContext();
+
+  const toggleCheck = (id: number) => {
+    setDataCheck((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, isChecked: !item.isChecked } : item
+      )
+    );
+  };
+
   return (
     <div className="h-full overflow-y-scroll min-w-[320px] bg-neutral-800">
-      {firstYearData.map((majles) => {
+      {dataCheck.map((majles) => {
         // Check if the current card matches the selected ID
         const isSelected = majles.id === selectedId;
 
@@ -26,7 +37,10 @@ function SideBar() {
             }`}
           >
             <div className="cursor-pointer">
-              <CheckBtn isChecked={majles.isChecked} />
+              <CheckBtn
+                isChecked={majles.isChecked}
+                onToggle={() => toggleCheck(majles.id)}
+              />
             </div>
 
             <Link href={`/program/${majles.id}`}>

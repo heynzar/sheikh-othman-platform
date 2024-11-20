@@ -1,5 +1,6 @@
 import HeaderTwo from "@/components/HeaderTwo";
 import SideBar from "@/components/SideBar";
+import CheckProvider from "@/context/CheckContext";
 
 function layout({
   children,
@@ -9,10 +10,12 @@ function layout({
   return (
     <>
       <HeaderTwo />
-      <main className="flex h-[89vh]">
-        <SideBar />
-        {children}
-      </main>
+      <CheckProvider>
+        <main className="flex h-[89vh]">
+          <SideBar />
+          {children}
+        </main>
+      </CheckProvider>
     </>
   );
 }

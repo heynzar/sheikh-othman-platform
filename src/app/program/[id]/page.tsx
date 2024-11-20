@@ -1,10 +1,20 @@
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import { firstYearData } from "@/utils/AppData";
+import { redirect } from "next/navigation";
 
 import Link from "next/link";
 
-export default function Page({ params }: { params: { id: string } }) {
-  const videoData = firstYearData[Number(params.id) - 1];
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id;
+  const videoData = firstYearData[Number(id) - 1];
+
+  if (Number(id) < 1 || Number(id) > 17) {
+    redirect("/program");
+  }
 
   return (
     <section className="w-full h-full p-5 overflow-y-scroll">
@@ -40,15 +50,15 @@ export default function Page({ params }: { params: { id: string } }) {
       }
     </style>
     <a href='https://www.youtube.com/embed/${
-      firstYearData[Number(params.id) - 1].videoLink
+      firstYearData[Number(id) - 1].videoLink
     }?autoplay=1'>
-      <img src='http://localhost:3000/${params.id}.jpg' alt='${
-                firstYearData[Number(params.id) - 1].title
+      <img src='http://localhost:3000/${id}.jpg' alt='${
+                firstYearData[Number(id) - 1].title
               }'>
 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
     `}
               src={`https://www.youtube.com/embed/${
-                firstYearData[Number(params.id) - 1].videoLink
+                firstYearData[Number(id) - 1].videoLink
               }`}
               title="abc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -58,13 +68,13 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
         {/* Navigation Buttons */}
         <div className="flex justify-between w-full">
-          <Link href={`/program/${Math.max(1, Number(params.id) - 1)}`}>
+          <Link href={`/program/${Math.max(1, Number(id) - 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <CircleChevronRight />
               <span>المجلس السابق</span>
             </button>
           </Link>
-          <Link href={`/program/${Math.min(17, Number(params.id) + 1)}`}>
+          <Link href={`/program/${Math.min(17, Number(id) + 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <span> المجلس التالي</span>
               <CircleChevronLeft />
