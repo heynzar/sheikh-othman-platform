@@ -48,17 +48,12 @@ export default async function Page({
         transform: scale(1.2);
       }
     </style>
-    <a href='https://www.youtube.com/embed/${
-      firstYearData[Number(id) - 1].videoLink
-    }?autoplay=1'>
-      <img src='http://localhost:3000/${id}.jpg' alt='${
-                firstYearData[Number(id) - 1].title
-              }'>
+    <a href='https://www.youtube.com/embed/${videoData.videoLink}?autoplay=1'>
+    
+      <img src='http://localhost:3000/${id}.jpg' alt='${videoData.title}'>
 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
     `}
-              src={`https://www.youtube.com/embed/${
-                firstYearData[Number(id) - 1].videoLink
-              }`}
+              src={`https://www.youtube.com/embed/${videoData.videoLink}`}
               title="abc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -67,7 +62,7 @@ export default async function Page({
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full -mt-5 mb-3">
           <Link href={`/program/${Math.max(1, Number(id) - 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <CircleChevronRight />

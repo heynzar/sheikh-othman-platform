@@ -24,13 +24,20 @@ const HeaderTwo = () => {
           </h1>
         </Link>
 
-        <div className="flex gap-2 items-center">
-          <h2>{result}%</h2>
-          <div className="bg-neutral-600 h-2 w-56 rounded-2xl flex justify-end">
-            <div
-              style={{ width: `${result}%` }}
-              className="bg-yellow-400  h-2 rounded-2xl transition-all"
-            ></div>
+        <div className="flex gap-10   items-center ">
+          <Link href="/program">
+            <button className="font-bold text-lg hover:text-yellow-400 transition-colors">
+              المجالس
+            </button>
+          </Link>
+          <div className="flex gap-2 items-center">
+            <h2>{result}%</h2>
+            <div className="bg-neutral-600 h-2 w-56 rounded-2xl flex justify-end">
+              <div
+                style={{ width: `${result}%` }}
+                className="bg-yellow-400  h-2 rounded-2xl transition-all"
+              ></div>
+            </div>
           </div>
         </div>
       </nav>
