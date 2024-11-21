@@ -26,7 +26,7 @@ export default function Home() {
           <Link href={`/program/${majles.id}`}>
             <Image
               src={`https://sheikh-othman.vercel.app/${majles.id}.jpg`}
-              alt="a"
+              alt={`${majles.title}`}
               className="rounded mb-2 w-full"
               width={180}
               height={100}

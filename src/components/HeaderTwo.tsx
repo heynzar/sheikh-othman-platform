@@ -16,8 +16,8 @@ const HeaderTwo = () => {
   const result = Math.floor((totlaChecked / total) * 100);
 
   return (
-    <header className="border-b border-neutral-500">
-      <nav className="flex flex-col sm:flex-row items-center justify-between  py-4 px-10  max-w-screen-lg mx-auto ">
+    <header className="border-b border-neutral-500 ">
+      <nav className="flex flex-col  sm:flex-row items-center justify-between max-h-[60px]  py-4 px-10  max-w-screen-lg mx-auto ">
         <Link href="/">
           <h1 className="hidden mb-4 sm:mb-0 sm:block text-xl hover:text-yellow-400 transition-colors">
             برنامج مفاتح الطلب

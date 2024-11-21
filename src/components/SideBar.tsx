@@ -27,7 +27,7 @@ function SideBar() {
   };
 
   return (
-    <aside>
+    <aside className="h-[calc(100dvh-62px)]">
       {hide && (
         <div
           className="cursor-pointer bg-neutral-800 rounded z-10  absolute right-0 top-15 flex justify-end"
@@ -41,7 +41,7 @@ function SideBar() {
       <div
         className={twMerge(
           "z-20  h-full overflow-y-scroll min-w-[320px] shadow-[-10px_0px_20px_rgba(0,0,0,0.2)] bg-neutral-800 ",
-          hide ? "hidden" : "absolute"
+          hide ? "hidden" : "block lg:static absolute "
         )}
       >
         <div

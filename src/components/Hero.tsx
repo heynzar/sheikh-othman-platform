@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <main className="flex flex-col px-4 lg:flex-row gap-5 lg:gap-10 justify-center items-center h-[80dvh]">
+    <main className="flex flex-col px-4 lg:flex-row gap-5 lg:gap-10 justify-center items-center h-[calc(100dvh-62px)]">
       <Image
         src={sheikhOthman}
         alt="الشيخ د.عثمان الخميس"

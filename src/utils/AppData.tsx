@@ -152,4 +152,96 @@ export const firstYearData = [
     duration: "1:28:54",
     isChecked: false,
   },
+
+  {
+    id: 18,
+    title: "المنظومة الميمية في الوصايا والآداب العلمية",
+    videoLink: "pwHBHShl2Ps",
+    pdfLink:
+      "https://drive.google.com/file/d/1v3jeKaYF_Z1VP0lzPEgY4KtxNqAkBF4m/preview",
+    duration: "3:06:49",
+    isChecked: false,
+  },
+
+  {
+    id: 19,
+    title: "ثلاثة الأصول وأدلتها",
+    videoLink: "43o1m2fPeHc",
+    pdfLink:
+      "https://drive.google.com/file/d/1DD3OitXkwf2dPxzDdvaLXFKocb9oQB30/preview",
+    duration: "2:38:45",
+    isChecked: false,
+  },
+  {
+    id: 20,
+    title: "القواعد الأربع",
+    videoLink: "BRljok3Cq6U",
+    pdfLink:
+      "https://drive.google.com/file/d/1TnhYf3asa1CzJoWx_X4sj2DtiwcNxP6H/preview",
+    duration: "28:23",
+    isChecked: false,
+  },
+  {
+    id: 21,
+    title: "كتاب التوحيد",
+    videoLink: "kq1Zk8DKd0Y",
+    pdfLink:
+      "https://drive.google.com/file/d/1mS2QVJpexGL2UDGgjHJq5VlH6wGNH-Ex/preview",
+    duration: "10:15:11",
+    isChecked: false,
+  },
+  {
+    id: 22,
+    title: "الأربعين النووية",
+    videoLink: "DhUUqYuStpQ",
+    pdfLink:
+      "https://drive.google.com/file/d/1md_8w3qug1fmTFXRHfaVH0L2m3El0hc4/preview",
+    duration: "4:09:38",
+    isChecked: false,
+  },
+  {
+    id: 23,
+    title: "تفسير الحزب الستين",
+    videoLink: "id7FTF2R08w",
+    pdfLink:
+      "https://drive.google.com/file/d/1xllMeW6UrxGQKYZjGSjsr_3D3ipmSipZ/preview",
+    duration: "1:39:37",
+    isChecked: false,
+  },
+  {
+    id: 24,
+    title: "المقدمة الفقهية الصغرى",
+    videoLink: "364ILW-TFh0",
+    pdfLink:
+      "https://drive.google.com/file/d/1fWQD2De96hY0mka0t7OnW7KotStGJ9S2/preview",
+    duration: "2:34:52",
+    isChecked: false,
+  },
+  {
+    id: 25,
+    title: "المنظومة البيقونية",
+    videoLink: "yAjN-NJWhyU",
+    pdfLink:
+      "https://drive.google.com/file/d/1NJjctGsEy5zOrcRCtwKgQT5EcebvV8n9/preview",
+    duration: "2:18:00",
+    isChecked: false,
+  },
+  {
+    id: 26,
+    title: "الورقات في أصول الفقه",
+    videoLink: "eNaQN3-yHUw",
+    pdfLink:
+      "https://drive.google.com/file/d/1jDsRyKoJ59MAEcwjfVTqxXXSI0dLTCKU/preview",
+    duration: "3:12:04",
+    isChecked: false,
+  },
+  {
+    id: 27,
+    title: "تائية الإلبيري (منظومة أبي إسحاق الإلبيري)",
+    videoLink: "Nt5yDZf4Img",
+    pdfLink:
+      "https://drive.google.com/file/d/1Xil8P08YVTeIVxKzkH3vQLLZyKEV2xea/preview",
+    duration: "46:52",
+    isChecked: false,
+  },
 ];
