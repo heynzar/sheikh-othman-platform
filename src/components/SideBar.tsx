@@ -4,7 +4,7 @@ import SideBarCard from "./SideBarCard";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
 import { useCheckContext } from "@/context/CheckContext";
-import { ChevronsLeft, ChevronsRight } from "lucide-react";
+import { PanelRightClose, PanelRightOpen } from "lucide-react";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -30,12 +30,12 @@ function SideBar() {
     <aside className="h-[calc(100dvh-62px)]">
       {hide && (
         <div
-          className="cursor-pointer bg-neutral-800 rounded z-10  absolute right-0 top-15 flex justify-end"
+          className="cursor-pointer bg-neutral-800 rounded z-10 p-1 pr-4 absolute right-0 top-15 flex justify-end"
           onClick={() => {
             setHide(!hide);
           }}
         >
-          <ChevronsLeft className="size-10" />
+          <PanelRightOpen className="size-8 opacity-80" />
         </div>
       )}
       <div
@@ -50,7 +50,7 @@ function SideBar() {
             setHide(!hide);
           }}
         >
-          <ChevronsRight className="size-10" />
+          <PanelRightClose className="size-8 opacity-80 m-1" />
         </div>
         {dataCheck.map((majles) => {
           // Check if the current card matches the selected ID

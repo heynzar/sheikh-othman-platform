@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className="border-b border-neutral-500 ">
       <nav className="flex flex-col max-h-[60px] py-4 sm:flex-row items-center justify-between  px-10  max-w-screen-lg mx-auto ">
@@ -12,12 +17,22 @@ const Header = () => {
 
         <ul className="flex gap-6">
           <Link href="/about">
-            <li className="hover:text-yellow-400 transition-colors text-lg">
-              البرنامج
+            <li
+              className={`${
+                pathname === "/about" ? "text-yellow-400" : "text-white"
+              } hover:text-yellow-400 transition-colors text-lg`}
+            >
+              عن البرنامج
             </li>
           </Link>
-          <Link href="/about-sheikh">
-            <li className="hover:text-yellow-400 transition-colors text-lg">
+          <Link href="/sheikh-othman-al-kamees">
+            <li
+              className={`${
+                pathname === "/sheikh-othman-al-kamees"
+                  ? "text-yellow-400"
+                  : "text-white"
+              } hover:text-yellow-400 transition-colors text-lg`}
+            >
               عن الشيخ
             </li>
           </Link>

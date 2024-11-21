@@ -8,7 +8,7 @@ const Hero = () => {
       <Image
         src={sheikhOthman}
         alt="الشيخ د.عثمان الخميس"
-        className="size-52 lg:size-72 rounded-full lg:rounded-3xl border-2"
+        className="size-40 md:size-52 lg:size-72 rounded-full lg:rounded-3xl border-2"
       />
       <div className="flex flex-col items-center gap-5 lg:gap-10">
         <h1 className="text-4xl md:text-6xl lg:text-8xl">برنامج مفاتح الطلب</h1>
