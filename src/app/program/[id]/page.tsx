@@ -1,5 +1,5 @@
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
-import { firstYearData } from "@/utils/AppData";
+import { appData } from "@/utils/AppData";
 import { redirect } from "next/navigation";
 
 import Link from "next/link";
@@ -9,9 +9,9 @@ export default async function Page({
   params: Promise<{ id: string }>;
 }) {
   const id = (await params).id;
-  const videoData = firstYearData[Number(id) - 1];
+  const videoData = appData[Number(id) - 1];
 
-  if (Number(id) < 1 || Number(id) > 17) {
+  if (Number(id) < 1 || Number(id) > 37) {
     redirect("/program");
   }
 
@@ -69,7 +69,7 @@ export default async function Page({
               <span>المجلس السابق</span>
             </button>
           </Link>
-          <Link href={`/program/${Math.min(17, Number(id) + 1)}`}>
+          <Link href={`/program/${Math.min(37, Number(id) + 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <span> المجلس التالي</span>
               <CircleChevronLeft />

@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { firstYearData } from "@/utils/AppData";
+import { appData } from "@/utils/AppData";
 
 type DataCheck = {
   id: number;
@@ -31,7 +31,7 @@ export default function CheckProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [dataCheck, setDataCheck] = useState(firstYearData);
+  const [dataCheck, setDataCheck] = useState(appData);
 
   useEffect(() => {
     const data = window.localStorage.getItem("APP_DATA");

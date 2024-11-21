@@ -1,4 +1,5 @@
-export const firstYearData = [
+export const appData = [
+  //first year
   {
     id: 1,
     title: "شرح كتاب خلاصة تعظيم العلم",
@@ -153,6 +154,8 @@ export const firstYearData = [
     isChecked: false,
   },
 
+  //Second year
+
   {
     id: 18,
     title: "المنظومة الميمية في الوصايا والآداب العلمية",
@@ -183,7 +186,7 @@ export const firstYearData = [
   },
   {
     id: 21,
-    title: "كتاب التوحيد",
+    title: "شرح كتاب التوحيد",
     videoLink: "kq1Zk8DKd0Y",
     pdfLink:
       "https://drive.google.com/file/d/1mS2QVJpexGL2UDGgjHJq5VlH6wGNH-Ex/preview",
@@ -242,6 +245,100 @@ export const firstYearData = [
     pdfLink:
       "https://drive.google.com/file/d/1Xil8P08YVTeIVxKzkH3vQLLZyKEV2xea/preview",
     duration: "46:52",
+    isChecked: false,
+  },
+
+  //third year
+
+  {
+    id: 28,
+    title: "كتاب البيِّنة في اقتباس العِلم والحَذْق فيه",
+    videoLink: "C_0MZ1jObPc",
+    pdfLink:
+      "https://drive.google.com/file/d/1D-sB8FzaQ-ISRQpEBv3P4Ylu3Eq4dMzb/preview",
+    duration: "1:17:51",
+    isChecked: false,
+  },
+  {
+    id: 29,
+    title: "كتاب ثلاثة الأصول وأدلتها",
+    videoLink: "M2K37S2Z6bg",
+    pdfLink:
+      "https://drive.google.com/file/d/1cut3KC10lgnvaYMTiloYi3wNiHSYU44p/preview",
+    duration: "2:35:45",
+    isChecked: false,
+  },
+  {
+    id: 30,
+    title: "كتاب القواعد الأربع",
+    videoLink: "jl6N-YQYrAU",
+    pdfLink:
+      "https://drive.google.com/file/d/1VJnqYQ6zvorT3d5sBPFakQnh_Ll67NZC/preview",
+    duration: "19:23",
+    isChecked: false,
+  },
+  {
+    id: 31,
+    title: "شرح كتاب التوحيد",
+    videoLink: "pvRX0yL6bhA",
+    pdfLink:
+      "https://drive.google.com/file/d/1um54Abo7udXuTVa4fCSQu-HSB_sDzacv/preview",
+    duration: "9:33:23",
+    isChecked: false,
+  },
+  {
+    id: 32,
+    title: "شرح كتاب الأربعون النووية",
+    videoLink: "0Qif87wy-XY",
+    pdfLink:
+      "https://drive.google.com/file/d/19GOYqYO6dJqb-QrV30koJsBloJHWo8DC/preview",
+    duration: "5:01:22",
+    isChecked: false,
+  },
+  {
+    id: 33,
+    title: "المقدمة الفقهية الصغرى",
+    videoLink: "R3ApCiQacAI",
+    pdfLink:
+      "https://drive.google.com/file/d/1BVDf5VoHMoe_fdi4poz3sId6_WsZcHu1/preview",
+    duration: "2:28:44",
+    isChecked: false,
+  },
+
+  {
+    id: 34,
+    title: "تفسيرالفاتحة والحزب الستين",
+    videoLink: "oxhfZe8pyQo",
+    pdfLink:
+      "https://drive.google.com/file/d/1Z12F8DrDCoSBQLGPIWW2hB8E9_wvm0ZR/preview",
+    duration: "2:34:18",
+    isChecked: false,
+  },
+  {
+    id: 35,
+    title: "نخبة الفكر في مصطلح أهل الأثر",
+    videoLink: "lp6JqPJYVIY",
+    pdfLink:
+      "https://drive.google.com/file/d/1-yLcuy6POZd_HKn4fhto_H8eU52DuxPZ/preview",
+    duration: "2:21:38",
+    isChecked: false,
+  },
+  {
+    id: 36,
+    title: "قواعد أصول الفقه",
+    videoLink: "Tfgodrn3uSs",
+    pdfLink:
+      "https://drive.google.com/file/d/1UTk6_IyZpajXlZWtCFz6tmCFRH1M18C3/preview",
+    duration: "3:39:06",
+    isChecked: false,
+  },
+  {
+    id: 37,
+    title: "تائية الإلبيري",
+    videoLink: "YGJ0MHN3WqY",
+    pdfLink:
+      "https://drive.google.com/file/d/1LmnEmS6IKOEcIBBhpvBTUvbxEZjDzK6w/preview",
+    duration: "43:53",
     isChecked: false,
   },
 ];
