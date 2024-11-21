@@ -4,7 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   images: {
-    domains: ["localhost"],
+    domains: [
+      "localhost",
+      "raw.githubusercontent.com",
+      "sheikh-othman.vercel.app",
+    ],
   },
 };
 

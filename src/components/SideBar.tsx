@@ -30,7 +30,7 @@ function SideBar() {
     <aside>
       {hide && (
         <div
-          className="cursor-pointer  absolute right-0 top-15 flex justify-end"
+          className="cursor-pointer bg-neutral-800 rounded z-10  absolute right-0 top-15 flex justify-end"
           onClick={() => {
             setHide(!hide);
           }}
