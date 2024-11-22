@@ -53,7 +53,7 @@ export default async function Page({
       <img src='https://sheikh-othman.vercel.app/${videoData.id}.png' alt='${videoData.title}'>
 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
     `}
-              src={`https://www.youtube.com/embed/${videoData.videoLink}`}
+              src={`https://www.youtube.com/embed/${videoData.videoLink}&rel=0`}
               title="abc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Link from "next/link";
 
 function Home() {
   return (
@@ -51,6 +52,12 @@ function Home() {
           آفاق التعمق في علوم الشريعة. هذه الرحلة ليست مجرد تعلم؛ بل هي تأسيس
           لمسار علمي يبني عقولاً وقلوباً على نور الهداية.
         </p>
+
+        <Link href="/program">
+          <button className="button-primary my-10 text-base">
+            إبدأ من هنا
+          </button>
+        </Link>
       </main>
       <Footer />
     </>
