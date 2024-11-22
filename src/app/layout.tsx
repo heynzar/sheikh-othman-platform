@@ -9,12 +9,20 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "تطبيق متابعة برنامج مفاتح الطلب",
-  description: "رحلة طلب العلم الشرعي بعنوان مفاتح الطلب، للشيخ د.عثمان الخميس",
+  title: "برنامج مفاتح الطلب",
+  description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس",
+  keywords: [
+    "عثمان الخميس",
+    "دروس العلم الشرعي",
+    "تطبيق إسلامي",
+    "طلب العلم",
+    "منصة تعليمية إسلامية",
+    "برنامج مفاتح الطلب",
+  ],
+  publisher: "Your Name or Organization",
   openGraph: {
-    title: "تطبيق متابعة برنامج مفاتح الطلب",
-    description:
-      "رحلة طلب العلم الشرعي بعنوان مفاتح الطلب، للشيخ د.عثمان الخميس.",
+    title: "برنامج مفاتح الطلب",
+    description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس.",
     url: "https://sheikh-othman.vercel.app/",
     type: "website",
     images: [
@@ -22,15 +30,14 @@ export const metadata: Metadata = {
         url: "/1.png",
         width: 1200,
         height: 630,
-        alt: "تطبيق متابعة برنامج مفاتح الطلب",
+        alt: "برنامج مفاتح الطلب",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "تطبيق متابعة برنامج مفاتح الطلب",
-    description:
-      "رحلة طلب العلم الشرعي بعنوان مفاتح الطلب، للشيخ د.عثمان الخميس.",
+    title: "برنامج مفاتح الطلب",
+    description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس.",
     images: ["/1.png"],
   },
 };
@@ -41,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="rtl">
+    <html lang="ar" dir="rtl">
       <body className={`${amiri.className} antialiased`}>{children}</body>
     </html>
   );
