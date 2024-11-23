@@ -11,9 +11,10 @@ function Home() {
     <>
       <Header />
       <main className="text-lg md:text-xl tracking-wide leading-9 px-4 sm:px-10 lg:px-0 max-w-screen-md mx-auto py-10 ">
-        <h3 className="text-3xl mb-10 underline underline-offset-4">
+        <h1 className="hidden">عن الشيخ الدكتور عثمان الخميس</h1>
+        <h2 className="text-3xl mb-10 underline underline-offset-4">
           اسمه ونسبه ومولده:
-        </h3>
+        </h2>
         <p className="">
           عُثْمَانْ بن مُحَمّدْ بن حَمَدْ بن عَبْدِ الله بن صَالِحْ بن مُحَمّدْ
           الخَمِيْسْ النَاصِرِيْ التَمِيْمِيْ وباختصار عُثْمَانْ الخَمِيْسْ فقيه
@@ -24,9 +25,9 @@ function Home() {
         <p>الجنسية : كويتي </p>
 
         <hr className="mt-10 opacity-50" />
-        <h3 className="text-3xl my-10 underline underline-offset-4">
+        <h2 className="text-3xl my-10 underline underline-offset-4">
           مسيرته العلمية والعملية
-        </h3>
+        </h2>
         <p className="indent-8">
           درس في جامعة الإمام محمد بن سعود الإسلامية بالرياض، حاصل على شهادة
           الماجستير في الحديث النبوي، برسالة عن الأحاديث الواردة في شأن السبطين
@@ -59,7 +60,7 @@ function Home() {
         </p>
 
         <hr className="mt-10 opacity-50" />
-        <h3 className="text-3xl my-10 underline underline-offset-4">مشايخه</h3>
+        <h2 className="text-3xl my-10 underline underline-offset-4">مشايخه</h2>
 
         <ul>
           <li>الشيخ عبد العزيز بن عبد الله بن باز.</li>
@@ -77,7 +78,7 @@ function Home() {
         </ul>
 
         <hr className="mt-10 opacity-50" />
-        <h3 className="text-3xl my-10 underline underline-offset-4">مؤلفاته</h3>
+        <h2 className="text-3xl my-10 underline underline-offset-4">مؤلفاته</h2>
 
         <ul className=" flex flex-col gap-4">
           <li>كتاب المراجعات، دراسة نقدية حديثية، رسالة دكتوراه.</li>

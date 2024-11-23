@@ -14,6 +14,9 @@ export async function generateMetadata({
   return {
     title: videoData.title,
     description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس.",
+    alternates: {
+      canonical: `https://sheikh-othman.vercel.app/program/${id}`,
+    },
     url: `https://sheikh-othman.vercel.app/program/${id}`,
     openGraph: {
       images: [
@@ -43,6 +46,7 @@ export default async function Page({
   return (
     <section className="w-full h-full p-5 overflow-y-scroll">
       <div className="max-w-screen-md w-full mx-auto flex flex-col gap-5 items-center">
+        <h1 className="hidden">{videoData.title}</h1>
         <div className="w-full max-h-min bg-neutral-700 rounded-xl  aspect-video shadow-md m-8">
           <div className="relative pb-[56.15%] h-0 overflow-hidden">
             <iframe
@@ -94,6 +98,7 @@ export default async function Page({
               <span>المجلس السابق</span>
             </button>
           </Link>
+
           <Link href={`/program/${Math.min(37, Number(id) + 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <span> المجلس التالي</span>

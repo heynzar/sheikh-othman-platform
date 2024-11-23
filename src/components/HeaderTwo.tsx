@@ -19,9 +19,9 @@ const HeaderTwo = () => {
     <header className="border-b border-neutral-500 ">
       <nav className="flex flex-col  sm:flex-row items-center justify-between max-h-[60px]  py-4 px-10  max-w-screen-lg mx-auto ">
         <Link href="/">
-          <h1 className="hidden mb-4 sm:mb-0 sm:block text-xl hover:text-yellow-400 transition-colors">
+          <p className="hidden mb-4 sm:mb-0 sm:block text-xl hover:text-yellow-400 transition-colors">
             برنامج مفاتح الطلب
-          </h1>
+          </p>
         </Link>
 
         <div className="flex gap-10 items-center ">
@@ -31,7 +31,7 @@ const HeaderTwo = () => {
             </button>
           </Link>
           <div className="flex gap-2 items-center">
-            <h2>{result}%</h2>
+            <span>{result}%</span>
             <div className="bg-neutral-600 h-2 w-56 rounded-2xl flex justify-end">
               <div
                 style={{ width: `${result}%` }}

@@ -38,7 +38,7 @@ export const appData = [
   },
   {
     id: 5,
-    title: "شرح كتاب التوحيد",
+    title: "شرح كتاب التوحيد ١",
     videoLink: "WQX91eEXCwY",
     pdfLink:
       "https://drive.google.com/file/d/1nQShjPJBSiX16wyMFEZXyA4YYISfhjqy/preview",
@@ -65,7 +65,7 @@ export const appData = [
   },
   {
     id: 8,
-    title: "شرح كتاب الأربعون النووية",
+    title: "شرح كتاب الأربعون النووية ١",
     videoLink: "tHbS98tsHdo",
     pdfLink:
       "https://drive.google.com/file/d/1fJEVqf65A8jIiMh5RoAs0J0jdLmJc_tj/preview",
@@ -186,7 +186,7 @@ export const appData = [
   },
   {
     id: 21,
-    title: "شرح كتاب التوحيد",
+    title: "شرح كتاب التوحيد ٢",
     videoLink: "kq1Zk8DKd0Y",
     pdfLink:
       "https://drive.google.com/file/d/1mS2QVJpexGL2UDGgjHJq5VlH6wGNH-Ex/preview",
@@ -195,7 +195,7 @@ export const appData = [
   },
   {
     id: 22,
-    title: "الأربعين النووية",
+    title: "شرح كتاب الأربعون النووية ٢",
     videoLink: "DhUUqYuStpQ",
     pdfLink:
       "https://drive.google.com/file/d/1md_8w3qug1fmTFXRHfaVH0L2m3El0hc4/preview",
@@ -213,7 +213,7 @@ export const appData = [
   },
   {
     id: 24,
-    title: "المقدمة الفقهية الصغرى",
+    title: "المقدمة الفقهية الصغرى ١",
     videoLink: "364ILW-TFh0",
     pdfLink:
       "https://drive.google.com/file/d/1fWQD2De96hY0mka0t7OnW7KotStGJ9S2/preview",
@@ -279,7 +279,7 @@ export const appData = [
   },
   {
     id: 31,
-    title: "شرح كتاب التوحيد",
+    title: "شرح كتاب التوحيد ٣",
     videoLink: "pvRX0yL6bhA",
     pdfLink:
       "https://drive.google.com/file/d/1um54Abo7udXuTVa4fCSQu-HSB_sDzacv/preview",
@@ -288,7 +288,7 @@ export const appData = [
   },
   {
     id: 32,
-    title: "شرح كتاب الأربعون النووية",
+    title: "شرح كتاب الأربعون النووية ٣",
     videoLink: "0Qif87wy-XY",
     pdfLink:
       "https://drive.google.com/file/d/19GOYqYO6dJqb-QrV30koJsBloJHWo8DC/preview",
@@ -297,7 +297,7 @@ export const appData = [
   },
   {
     id: 33,
-    title: "المقدمة الفقهية الصغرى",
+    title: "المقدمة الفقهية الصغرى ٢",
     videoLink: "R3ApCiQacAI",
     pdfLink:
       "https://drive.google.com/file/d/1BVDf5VoHMoe_fdi4poz3sId6_WsZcHu1/preview",

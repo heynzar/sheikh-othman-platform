@@ -12,6 +12,7 @@ function Home() {
     <>
       <Header />
       <main className="text-lg md:text-xl tracking-wide leading-9 px-4 sm:px-10 lg:px-0 max-w-screen-md mx-auto py-10 ">
+        <h1 className="hidden">عن البرنامج</h1>
         <p>
           رحلة طلب العلم الشرعي
           <span className="text-yellow-400 font-bold">

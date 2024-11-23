@@ -13,7 +13,9 @@ export const metadata: Metadata = {
     default: "برنامج مفاتح الطلب",
     template: `برنامج مفاتح الطلب - %s`,
   },
-
+  alternates: {
+    canonical: "https://sheikh-othman.vercel.app/",
+  },
   description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس",
   keywords: [
     "عثمان الخميس",
