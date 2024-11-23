@@ -1,8 +1,33 @@
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import { appData } from "@/utils/AppData";
 import { redirect } from "next/navigation";
-
 import Link from "next/link";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id;
+  const videoData = appData[Number(id) - 1];
+
+  return {
+    title: videoData.title,
+    description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس.",
+    url: `https://sheikh-othman.vercel.app/program/${id}`,
+    openGraph: {
+      images: [
+        {
+          url: `https://sheikh-othman.vercel.app/${id}.png`,
+          width: 1200,
+          height: 630,
+          alt: videoData.title,
+        },
+      ],
+    },
+  };
+}
+
 export default async function Page({
   params,
 }: {

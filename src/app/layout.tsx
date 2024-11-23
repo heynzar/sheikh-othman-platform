@@ -9,7 +9,11 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "برنامج مفاتح الطلب",
+  title: {
+    default: "برنامج مفاتح الطلب",
+    template: `برنامج مفاتح الطلب - %s`,
+  },
+
   description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس",
   keywords: [
     "عثمان الخميس",
@@ -19,7 +23,7 @@ export const metadata: Metadata = {
     "منصة تعليمية إسلامية",
     "برنامج مفاتح الطلب",
   ],
-  publisher: "Your Name or Organization",
+  publisher: "Nzar",
   openGraph: {
     title: "برنامج مفاتح الطلب",
     description: "منصة لمتابعة وتعلم سلسلة مفاتح الطلب للشيخ عثمان الخميس.",
