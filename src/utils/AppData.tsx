@@ -252,7 +252,7 @@ export const appData = [
     title: "اسئلة المقررات",
     videoLink: "Nt5yDZf4Img",
     pdfLink:
-      "https://drive.google.com/file/d/1Xil8P08YVTeIVxKzkH3vQLLZyKEV2xea/preview",
+      "https://drive.google.com/file/d/1gNsU40aqAYqOrVxpPQ1Y9QowW_LpI4ly/preview",
     duration: "43:42",
     isChecked: false,
   },
@@ -355,7 +355,7 @@ export const appData = [
     title: "اسئلة ومراجعات",
     videoLink: "Xom4D5nCMp0",
     pdfLink:
-      "https://drive.google.com/file/d/1LmnEmS6IKOEcIBBhpvBTUvbxEZjDzK6w/preview",
+      "https://drive.google.com/file/d/1OmJDiJc3uLQKQFObWnMZ5qBB3I9CFK9P/preview",
     duration: "26:53",
     isChecked: false,
   },
