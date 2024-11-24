@@ -28,6 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/program`,
       lastModified: lastModified,
     },
+    {
+      url: `${baseUrl}/resources`,
+      lastModified: lastModified,
+    },
     ...dPages,
   ];
 }

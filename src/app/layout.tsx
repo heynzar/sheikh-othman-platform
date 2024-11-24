@@ -55,6 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="tYLAj2kgtjbTbW3NdtbsDNet6hC_nVjWh5Kjsz0RGSo"
+        />
+      </head>
       <body className={`${amiri.className} antialiased`}>{children}</body>
     </html>
   );
