@@ -247,11 +247,20 @@ export const appData = [
     duration: "46:52",
     isChecked: false,
   },
+  {
+    id: 28,
+    title: "اسئلة المقررات",
+    videoLink: "Nt5yDZf4Img",
+    pdfLink:
+      "https://drive.google.com/file/d/1Xil8P08YVTeIVxKzkH3vQLLZyKEV2xea/preview",
+    duration: "43:42",
+    isChecked: false,
+  },
 
   //third year
 
   {
-    id: 28,
+    id: 29,
     title: "كتاب البيِّنة في اقتباس العِلم والحَذْق فيه",
     videoLink: "C_0MZ1jObPc",
     pdfLink:
@@ -260,7 +269,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 29,
+    id: 30,
     title: "كتاب ثلاثة الأصول وأدلتها",
     videoLink: "M2K37S2Z6bg",
     pdfLink:
@@ -269,7 +278,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 30,
+    id: 31,
     title: "كتاب القواعد الأربع",
     videoLink: "jl6N-YQYrAU",
     pdfLink:
@@ -278,7 +287,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 31,
+    id: 32,
     title: "شرح كتاب التوحيد ٣",
     videoLink: "pvRX0yL6bhA",
     pdfLink:
@@ -287,7 +296,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 32,
+    id: 33,
     title: "شرح كتاب الأربعون النووية ٣",
     videoLink: "0Qif87wy-XY",
     pdfLink:
@@ -296,7 +305,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 33,
+    id: 34,
     title: "المقدمة الفقهية الصغرى ٢",
     videoLink: "R3ApCiQacAI",
     pdfLink:
@@ -306,7 +315,7 @@ export const appData = [
   },
 
   {
-    id: 34,
+    id: 35,
     title: "تفسيرالفاتحة والحزب الستين",
     videoLink: "oxhfZe8pyQo",
     pdfLink:
@@ -315,7 +324,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 35,
+    id: 36,
     title: "نخبة الفكر في مصطلح أهل الأثر",
     videoLink: "lp6JqPJYVIY",
     pdfLink:
@@ -324,7 +333,7 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 36,
+    id: 37,
     title: "قواعد أصول الفقه",
     videoLink: "Tfgodrn3uSs",
     pdfLink:
@@ -333,12 +342,21 @@ export const appData = [
     isChecked: false,
   },
   {
-    id: 37,
+    id: 38,
     title: "تائية الإلبيري",
     videoLink: "YGJ0MHN3WqY",
     pdfLink:
       "https://drive.google.com/file/d/1LmnEmS6IKOEcIBBhpvBTUvbxEZjDzK6w/preview",
     duration: "43:53",
+    isChecked: false,
+  },
+  {
+    id: 39,
+    title: "اسئلة ومراجعات",
+    videoLink: "Xom4D5nCMp0",
+    pdfLink:
+      "https://drive.google.com/file/d/1LmnEmS6IKOEcIBBhpvBTUvbxEZjDzK6w/preview",
+    duration: "26:53",
     isChecked: false,
   },
 ];

@@ -39,7 +39,7 @@ export default async function Page({
   const id = (await params).id;
   const videoData = appData[Number(id) - 1];
 
-  if (Number(id) < 1 || Number(id) > 37) {
+  if (Number(id) < 1 || Number(id) > 39) {
     redirect("/program");
   }
 

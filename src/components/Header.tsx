@@ -42,10 +42,16 @@ const Header = () => {
             </Link>
           </li>
 
-          <li className="hover:text-yellow-400 transition-colors text-lg">
-            <a href="https://othmanalkamees.com/" target="_blank">
-              الموقع الرسمي
-            </a>
+          <li>
+            <Link href="/resources">
+              <p
+                className={`${
+                  pathname === "/resources" ? "text-yellow-400" : "text-white"
+                } hover:text-yellow-400 transition-colors text-lg`}
+              >
+                روابط مهمة
+              </p>
+            </Link>
           </li>
         </ul>
       </nav>
