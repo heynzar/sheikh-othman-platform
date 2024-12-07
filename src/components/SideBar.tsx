@@ -4,17 +4,41 @@ import SideBarCard from "./SideBarCard";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
 import { useCheckContext } from "@/context/CheckContext";
-import { PanelRightClose, PanelRightOpen } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import { twMerge } from "tailwind-merge";
+import { PanelRight } from "lucide-react";
 
 function SideBar() {
-  // Get the current pathname
+  const [close, setClose] = useState(true);
   const pathname = usePathname();
-  const [hide, setHide] = useState(true);
-
-  // Extract the dynamic ID from the URL (e.g., /program/[id])
   const selectedId = Number(pathname.split("/").pop());
+
+  const [track, setTrack] = useState(false);
+  const [width, setWidth] = useState(320);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (track) {
+        const newWidth = Math.min(
+          Math.max(window.innerWidth - e.clientX, 220),
+          410
+        );
+        setWidth(newWidth);
+      }
+    };
+
+    const handleMouseUp = () => {
+      if (track) setTrack(false);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [track]);
 
   const { dataCheck, setDataCheck } = useCheckContext();
 
@@ -27,59 +51,71 @@ function SideBar() {
   };
 
   return (
-    <aside className="h-[calc(100dvh-62px)]">
-      {hide && (
+    <aside className="relative">
+      <div className="absolute -top-24 sm:-top-16 right-0 size-9 m-4">
         <div
-          className="cursor-pointer bg-neutral-800 rounded z-10 p-1 pr-4 absolute right-0 top-15 flex justify-end"
-          onClick={() => {
-            setHide(!hide);
-          }}
+          onClick={() => setClose(!close)}
+          id="open-close-side-bar"
+          className="rounded-md bg-neutral-800 size-8 p-1 flex items-center justify-center hover:bg-neutral-700/70 transition-colors cursor-pointer"
         >
-          <PanelRightOpen className="size-8 opacity-80" />
+          <PanelRight strokeWidth={1} className="size-6" />
         </div>
-      )}
+      </div>
       <div
-        className={twMerge(
-          "z-20  h-full overflow-y-scroll min-w-[320px] shadow-[-10px_0px_20px_rgba(0,0,0,0.2)] bg-neutral-800 ",
-          hide ? "hidden" : "block lg:static absolute "
-        )}
+        style={{
+          marginRight: `${close ? 0 : -width - 40}px`,
+          transition: "0.5s ease",
+        }}
+        className="select-none absolute shadow-md md:static md:shadow-none z-50"
       >
         <div
-          className="sticky inset-0 bg-neutral-800 border-b hover:bg-neutral-700 border-white/20 cursor-pointer flex justify-end"
-          onClick={() => {
-            setHide(!hide);
-          }}
+          className={twMerge(
+            "flex transition-all duration-500",
+            close
+              ? "min-w-[300px] sm:max-h-[calc(100dvh-60px)] max-h-[calc(100dvh-92px)] overflow-y-clip  max-w-[410px]"
+              : "translate-x-[100%]"
+          )}
         >
-          <PanelRightClose className="size-8 opacity-80 m-1" />
+          <div
+            style={{ width: `${width}px` }}
+            className={twMerge(
+              "relative min-w-[300px] max-w-[410px] overflow-y-scroll overflow-x-clip flex flex-col justify-between text-sm bg-neutral-800 border-l border-white/10"
+            )}
+          >
+            {dataCheck.map((majles) => {
+              // Check if the current card matches the selected ID
+              const isSelected = majles.id === selectedId;
+
+              return (
+                <div
+                  key={majles.id}
+                  className={`flex items-center  p-4 border-b border-white/20 gap-4  hover:bg-neutral-700 ${
+                    isSelected ? "bg-neutral-600" : "bg-transparent"
+                  }`}
+                >
+                  <div className="cursor-pointer">
+                    <CheckBtn
+                      isChecked={majles.isChecked}
+                      onToggle={() => toggleCheck(majles.id)}
+                    />
+                  </div>
+
+                  <Link href={`/program/${majles.id}`}>
+                    <SideBarCard
+                      title={majles.title}
+                      id={majles.id}
+                      duration={majles.duration}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+          <div
+            onMouseDown={() => setTrack(true)}
+            className="w-1.5  h-screen bg-transparent hover:bg-neutral-600/80 transition-colors cursor-col-resize"
+          ></div>
         </div>
-        {dataCheck.map((majles) => {
-          // Check if the current card matches the selected ID
-          const isSelected = majles.id === selectedId;
-
-          return (
-            <div
-              key={majles.id}
-              className={`flex items-center  p-4 border-b border-white/20 gap-4  hover:bg-neutral-700 ${
-                isSelected ? "bg-neutral-600" : "bg-transparent"
-              }`}
-            >
-              <div className="cursor-pointer">
-                <CheckBtn
-                  isChecked={majles.isChecked}
-                  onToggle={() => toggleCheck(majles.id)}
-                />
-              </div>
-
-              <Link href={`/program/${majles.id}`}>
-                <SideBarCard
-                  title={majles.title}
-                  id={majles.id}
-                  duration={majles.duration}
-                />
-              </Link>
-            </div>
-          );
-        })}
       </div>
     </aside>
   );

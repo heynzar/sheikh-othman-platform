@@ -61,7 +61,11 @@ export default function RootLayout({
           content="tYLAj2kgtjbTbW3NdtbsDNet6hC_nVjWh5Kjsz0RGSo"
         />
       </head>
-      <body className={`${amiri.className} antialiased`}>{children}</body>
+      <body
+        className={`${amiri.className} antialiased max-h-screen overflow-clip`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

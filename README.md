@@ -34,7 +34,7 @@ but everything changed when I discovered Sheikh Othman Khames's series on YouTub
 
 However, there were a bunch of playlists for the series, which led to distractions as I watched. Over time, I lost track of my progress, especially considering that some videos were quite long.
 
-To solve this problem, I created this organized platform that consolidates all the videos from every playlist into one place.
+To solve this problem, I created this organized platform that combines all the videos from every playlist into one place.
 
 It provides a distraction-free experience, along with a reliable progress tracking system, ensuring that users can continue learning easily without interruptions from unrelated content.
 

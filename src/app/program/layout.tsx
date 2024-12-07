@@ -19,7 +19,7 @@ function layout({
     <>
       <CheckProvider>
         <HeaderTwo />
-        <main className="flex h-[89vh]">
+        <main className="flex h-[90vh]">
           <SideBar />
           {children}
         </main>
