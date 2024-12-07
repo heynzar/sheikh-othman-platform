@@ -4,7 +4,7 @@ import SideBarCard from "./SideBarCard";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
 import { useCheckContext } from "@/context/CheckContext";
-import { useState, useEffect, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { PanelRight } from "lucide-react";
 
