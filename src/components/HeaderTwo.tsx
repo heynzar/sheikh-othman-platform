@@ -21,7 +21,7 @@ const HeaderTwo = () => {
 
   return (
     <header className="border-b border-neutral-500 ">
-      <nav className="flex flex-col  sm:flex-row items-center justify-between  sm:max-h-[60px]  py-4 px-10  max-w-screen-lg mx-auto ">
+      <nav className="flex flex-col  sm:flex-row items-center justify-between sm:max-h-[55px]  py-4 px-10  max-w-screen-lg mx-auto ">
         <div className="flex justify-between items-center gap-6 mb-2">
           <Link href="/">
             <span className=" mb-4 sm:mr-5 sm:mb-0  text-xl hover:text-yellow-400 transition-colors">

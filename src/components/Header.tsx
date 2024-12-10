@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="border-b border-neutral-500 ">
-      <nav className="flex flex-col max-h-[60px] py-4 sm:flex-row items-center justify-between  px-10  max-w-screen-lg mx-auto ">
+      <nav className="flex flex-col max-h-[55px] py-4 sm:flex-row items-center justify-between  px-10  max-w-screen-lg mx-auto ">
         <Link href="/">
           <p className="hidden  sm:block text-xl hover:text-yellow-400 transition-colors">
             برنامج مفاتح الطلب

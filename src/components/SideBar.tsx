@@ -72,7 +72,7 @@ function SideBar() {
           className={twMerge(
             "flex transition-all duration-500",
             close
-              ? "min-w-[300px] sm:max-h-[calc(100dvh-60px)] max-h-[calc(100dvh-92px)] overflow-y-clip  max-w-[410px]"
+              ? "min-w-[300px] max-h-[calc(100dvh-56px)] overflow-y-clip  max-w-[410px]"
               : "translate-x-[100%]"
           )}
         >
