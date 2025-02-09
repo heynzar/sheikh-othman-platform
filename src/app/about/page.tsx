@@ -11,17 +11,18 @@ function Home() {
   return (
     <>
       <Header />
-      <main className="text-lg md:text-xl tracking-wide leading-9 px-4 sm:px-10 lg:px-0 max-w-screen-md mx-auto py-10 ">
+      <main className="text-lg md:text-xl tracking-wide leading-9 px-4 sm:px-10 lg:px-0 max-w-screen-md mx-auto py-10">
         <h1 className="hidden">عن البرنامج</h1>
         <p>
           رحلة طلب العلم الشرعي
           <span className="text-yellow-400 font-bold">
             &quot;مفاتح الطلب&quot;
-          </span>{" "}
-          مع الشيخ الدكتور عثمان الخميس هي بوابة نور للتعرف على أصول علوم
-          الشريعة وأساسياتها. تهدف هذه الرحلة إلى تبسيط طريق العلم للمبتدئين وكل
-          راغب في التعمق، بأسلوب ميسر يُرشد القلوب ويثبّت العلم، ليرتقي الطالب
-          بثقة على طريق المعرفة.
+          </span>
+          {"، "}
+          بإشراف الشيخ د.عثمان الخميس هي بوابة نور للتعرف على أصول علوم الشريعة
+          وأساسياتها. تهدف هذه الرحلة إلى تبسيط طريق العلم للمبتدئين وكل راغب في
+          التعمق، بأسلوب ميسر يُرشد القلوب ويثبّت العلم، ليرتقي الطالب بثقة على
+          طريق المعرفة.
         </p>
 
         <hr className="my-10 opacity-50" />
@@ -64,7 +65,21 @@ function Home() {
             إبدأ من هنا
           </button>
         </Link>
+        <hr className="my-10 opacity-50" />
+        <span>
+          كل الشكر لـ{" "}
+          <Link
+            href="https://nzar.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-yellow-400 hover:underline font-sans"
+          >
+            Nzar
+          </Link>{" "}
+          على مساهمته في تطوير والاشراف على هذا الموقع.
+        </span>
       </main>
+
       <Footer />
     </>
   );
