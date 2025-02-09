@@ -4,17 +4,45 @@ import SideBarCard from "./SideBarCard";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
 import { useCheckContext } from "@/context/CheckContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { PanelRight } from "lucide-react";
+import { PanelRight, X } from "lucide-react";
 
 function SideBar() {
   const [close, setClose] = useState(true);
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+
   const pathname = usePathname();
   const selectedId = Number(pathname.split("/").pop());
 
   const [track, setTrack] = useState(false);
   const [width, setWidth] = useState(320);
+
+  useEffect(() => {
+    isSmallScreen && setClose(false);
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isSmallScreen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        setClose(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isSmallScreen]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -51,17 +79,18 @@ function SideBar() {
   };
 
   return (
-    <aside className="relative">
-      <div className="absolute -top-24 sm:-top-16 right-0 size-9 m-4">
-        <div
-          onClick={() => setClose(!close)}
-          id="open-close-side-bar"
-          className="rounded-md bg-neutral-800 size-8 p-1 flex items-center justify-center hover:bg-neutral-700/70 transition-colors cursor-pointer"
-        >
-          <PanelRight strokeWidth={1} className="size-6" />
-        </div>
-      </div>
+    <aside className="relative overflow-y-clip">
+      <button
+        onClick={() => setClose(!close)}
+        id="open-close-side-bar"
+        className="fixed sm:absolute sm:h-9 sm:w-max border-b sm:border-none sm:rounded-md sm:m-4 py-2 border-white/40 w-full z-10 sm:z-0  bg-neutral-800 p-1 flex items-center justify-center gap-2 hover:bg-neutral-700/70 transition-colors cursor-pointer"
+      >
+        <PanelRight strokeWidth={1} className="size-6" />
+        <span className="ml-2">إضغط لفتح قائمة المجالس</span>
+      </button>
+
       <div
+        ref={sidebarRef}
         style={{
           marginRight: `${close ? 0 : -width - 40}px`,
           transition: "0.5s ease",
@@ -72,7 +101,7 @@ function SideBar() {
           className={twMerge(
             "flex transition-all duration-500",
             close
-              ? "min-w-[300px] max-h-[calc(100dvh-56px)] overflow-y-clip  max-w-[410px]"
+              ? "min-w-[300px] max-h-[calc(100dvh-56px)] overflow-y-clip max-w-[410px]"
               : "translate-x-[100%]"
           )}
         >
@@ -82,6 +111,15 @@ function SideBar() {
               "relative min-w-[300px] max-w-[410px] overflow-y-scroll overflow-x-clip flex flex-col justify-between text-sm bg-neutral-800 border-l border-white/10"
             )}
           >
+            <button
+              onClick={() => setClose(!close)}
+              id="open-close-side-bar"
+              className="py-2 w-full z-10  bg-[#2c2c2c] border-b border-white/20 p-1 flex items-center justify-center gap-2 hover:bg-neutral-700/70 transition-colors cursor-pointer"
+            >
+              <X strokeWidth={1} className="size-6" />
+              <span>إضغط لإغلاق قائمة المجالس</span>
+            </button>
+
             {dataCheck.map((majles) => {
               // Check if the current card matches the selected ID
               const isSelected = majles.id === selectedId;
