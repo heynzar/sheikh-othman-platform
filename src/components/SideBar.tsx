@@ -11,13 +11,17 @@ import { PanelRight, X } from "lucide-react";
 function SideBar() {
   const [close, setClose] = useState(true);
   const sidebarRef = useRef<HTMLDivElement | null>(null);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const pathname = usePathname();
   const selectedId = Number(pathname.split("/").pop());
 
   const [track, setTrack] = useState(false);
   const [width, setWidth] = useState(320);
+
+  useEffect(() => {
+    setIsSmallScreen(window.innerWidth <= 768);
+  }, []);
 
   useEffect(() => {
     if (isSmallScreen) {
