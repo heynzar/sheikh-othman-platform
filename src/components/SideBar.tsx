@@ -20,14 +20,17 @@ function SideBar() {
   const [width, setWidth] = useState(320);
 
   useEffect(() => {
-    isSmallScreen && setClose(false);
+    if (isSmallScreen) {
+      setClose(false);
+    }
+
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isSmallScreen]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
