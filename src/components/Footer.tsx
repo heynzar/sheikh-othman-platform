@@ -6,14 +6,7 @@ export default function Footer() {
     >
       <p>
         &copy; {new Date().getFullYear()}
-        <a
-          target="_blank"
-          href="https://nzar.dev"
-          className="text-blue-500 hover:underline ml-1"
-        >
-          nzar.dev
-        </a>
-        <span className="ml-1">| برنامج مفاتح الطلب</span>
+        <span className="ml-1">• برنامج مفاتح الطلب</span>
       </p>
     </footer>
   );

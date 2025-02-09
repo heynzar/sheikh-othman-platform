@@ -44,7 +44,7 @@ export default async function Page({
   }
 
   return (
-    <section className="w-full h-screen p-5 overflow-y-scroll mr-auto">
+    <section className="w-full max-h-[calc(100dvh-94px)] sm:max-h-[calc(100dvh-56px)] mt-4 sm:mt-0 p-5 overflow-y-scroll mr-auto">
       <div className="max-w-screen-md w-full mx-auto flex flex-col gap-5 items-center">
         <h1 className="hidden">{videoData.title}</h1>
         <div className="w-full max-h-min bg-neutral-700 rounded-xl  aspect-video shadow-md m-8">

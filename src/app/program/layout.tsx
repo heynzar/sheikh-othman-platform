@@ -19,7 +19,7 @@ function layout({
     <>
       <CheckProvider>
         <HeaderTwo />
-        <main className="flex max-h-[calc(100vh-56px)]">
+        <main className="flex max-h-[calc(100dvh-94px)] sm:max-h-[calc(100dvh-56px)]">
           <SideBar />
           {children}
         </main>

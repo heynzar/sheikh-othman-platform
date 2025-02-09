@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <section className="flex gap-5 justify-center max-h-min p-5 flex-wrap overflow-y-scroll transition-all duration-500">
+    <section className="flex mt-10 sm:mt-0 gap-5 justify-center max-h-min p-5 flex-wrap overflow-y-scroll transition-all duration-500">
       <h1 className="hidden">المجالس</h1>
       {dataCheck.map((majles) => (
         <div
