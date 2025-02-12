@@ -16,7 +16,9 @@ body {
 .button-primary {
   @apply px-5 py-2 border-2 border-yellow-400 rounded-lg bg-yellow-400 text-black hover:scale-105 active:scale-100 transition-transform;
 }
-
+.button-secondary {
+  @apply px-5 py-2 border-2 border-yellow-400 text-yellow-400 rounded-lg hover:scale-105 active:scale-100 transition-transform;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }

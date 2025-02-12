@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import SideBarCard from "./SideBarCard";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
@@ -145,13 +144,13 @@ function SideBar() {
                     />
                   </div>
 
-                  <Link href={`/program/${majles.id}`}>
+                  <a href={`/program/${majles.id}`}>
                     <SideBarCard
                       title={majles.title}
                       id={majles.id}
                       duration={majles.duration}
                     />
-                  </Link>
+                  </a>
                 </div>
               );
             })}

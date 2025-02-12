@@ -23,9 +23,7 @@ const Hero = () => {
             <button className="button-primary">ابدأ من هنا</button>
           </Link>
           <Link href="/about">
-            <button className="px-5 py-2 border-2 border-yellow-400 text-yellow-400 rounded-lg hover:scale-105 active:scale-100 transition-transform">
-              نبذة عن البرنامج
-            </button>
+            <button className="button-secondary">نبذة عن البرنامج</button>
           </Link>
         </div>
       </section>
