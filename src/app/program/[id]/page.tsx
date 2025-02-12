@@ -1,7 +1,7 @@
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import { appData } from "@/utils/AppData";
 import { redirect } from "next/navigation";
-import Link from "next/link";
+import YouTubePlayer from "@/components/YouTubePlayer";
 
 export async function generateMetadata({
   params,
@@ -49,7 +49,7 @@ export default async function Page({
         <h1 className="hidden">{videoData.title}</h1>
         <div className="w-full max-h-min bg-neutral-700 rounded-xl  aspect-video shadow-md m-8">
           <div className="relative pb-[56.15%] h-0 overflow-hidden">
-            <iframe
+            {/* <iframe
               className="absolute rounded-xl top-0 left-0 w-full h-full border-0"
               loading="lazy"
               srcDoc={`<style>
@@ -77,37 +77,41 @@ export default async function Page({
         transform: scale(1.2);
       }
     </style>
+
     <a href='https://www.youtube.com/embed/${videoData.videoLink}?autoplay=1'>
-    
-      <img src='https://sheikh-othman.vercel.app/${videoData.id}.png' alt='${videoData.title}'>
-<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
+    <img src='https://sheikh-othman.vercel.app/${videoData.id}.png' alt='${videoData.title}'>
+    <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-circle-play'><circle cx='12' cy='12' r='10'/><polygon points='10 8 16 12 10 16 10 8'/></svg></a>
     `}
               src={`https://www.youtube.com/embed/${videoData.videoLink}&rel=0`}
               title="abc"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            ></iframe> */}
+
+            <YouTubePlayer
+              videoIndex={videoData.id}
+              videoId={videoData.videoLink}
+              title={videoData.title}
+            />
           </div>
         </div>
-
         {/* Navigation Buttons */}
         <div className="flex justify-between w-full -mt-5 mb-3">
-          <Link href={`/program/${Math.max(1, Number(id) - 1)}`}>
+          <a href={`/program/${Math.max(1, Number(id) - 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <CircleChevronRight />
               <span>المجلس السابق</span>
             </button>
-          </Link>
+          </a>
 
-          <Link href={`/program/${Math.min(37, Number(id) + 1)}`}>
+          <a href={`/program/${Math.min(37, Number(id) + 1)}`}>
             <button className="flex gap-2 items-center button-primary">
               <span> المجلس التالي</span>
               <CircleChevronLeft />
             </button>
-          </Link>
+          </a>
         </div>
-
-        {/* PDF Viewer */}
+        PDF Viewer
         <div className="p-0.5 rounded-[10px] bg-neutral-700 w-full max-w-screen-md">
           <iframe
             src={`${videoData.pdfLink}`}
