@@ -3,6 +3,8 @@ import SideBarCard from "./SideBarCard";
 import { usePathname } from "next/navigation";
 import CheckBtn from "./CheckBtn";
 import { useCheckContext } from "@/context/CheckContext";
+import { useProgressContext } from "@/context/ProgressContext";
+
 import { useState, useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { PanelRight, X } from "lucide-react";
@@ -17,6 +19,8 @@ function SideBar() {
 
   const [track, setTrack] = useState(false);
   const [width, setWidth] = useState(320);
+
+  const { progressData, updateProgress } = useProgressContext();
 
   useEffect(() => {
     setIsSmallScreen(window.innerWidth <= 768);
@@ -81,6 +85,14 @@ function SideBar() {
       prev.map((item) =>
         item.id === id ? { ...item, isChecked: !item.isChecked } : item
       )
+    );
+    updateProgress(
+      id,
+      progressData[id - 1].progress === 0 &&
+        dataCheck[id - 1].isChecked === false
+        ? 100
+        : 0,
+      progressData[id - 1].currentTime
     );
   };
 
@@ -149,6 +161,7 @@ function SideBar() {
                       title={majles.title}
                       id={majles.id}
                       duration={majles.duration}
+                      progress={progressData[majles.id - 1].progress}
                     />
                   </a>
                 </div>

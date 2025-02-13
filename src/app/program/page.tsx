@@ -25,13 +25,21 @@ function formatDuration(seconds: number): string {
 
 export default function Home() {
   const { dataCheck, setDataCheck } = useCheckContext();
-  const { progressData } = useProgressContext();
+  const { progressData, updateProgress } = useProgressContext();
 
   const toggleCheck = (id: number) => {
     setDataCheck((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, isChecked: !item.isChecked } : item
       )
+    );
+    updateProgress(
+      id,
+      progressData[id - 1].progress === 0 &&
+        dataCheck[id - 1].isChecked === false
+        ? 100
+        : 0,
+      progressData[id - 1].currentTime
     );
   };
 

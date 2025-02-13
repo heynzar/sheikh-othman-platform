@@ -111,7 +111,7 @@ export default async function Page({
             </button>
           </a>
         </div>
-        PDF Viewer
+
         <div className="p-0.5 rounded-[10px] bg-neutral-700 w-full max-w-screen-md">
           <iframe
             src={`${videoData.pdfLink}`}
