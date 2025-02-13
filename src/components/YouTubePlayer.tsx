@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useProgressContext } from "@/context/ProgressContext";
 import { useCheckContext } from "@/context/CheckContext";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import Link from "next/link";
 declare global {
   interface Window {
     YT: typeof YT;
+    onYouTubeIframeAPIReady?: () => void;
   }
 }
 
@@ -19,26 +20,24 @@ function YouTubePlayer({
   videoIndex: number;
   title: string;
 }) {
-  const playerRef = useRef<any>(null);
-  const progressInterval = useRef<NodeJS.Timeout | null>(null);
+  const playerRef = useRef<YT.Player | null>(null);
+  const progressInterval = useRef<ReturnType<typeof setInterval> | null>(null);
   const { progressData, updateProgress } = useProgressContext();
   const { setDataCheck } = useCheckContext();
   const [showConfetti, setShowConfetti] = useState(false);
-
   const [videoTime, setVideoTime] = useState<number | null>(null);
   const [ytReady, setYtReady] = useState(false);
 
   useEffect(() => {
-    if (!(window as any).YT) {
+    if (!window.YT) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
-      const firstScriptTag = document.getElementsByTagName("script")[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+      document.head.appendChild(tag);
     } else {
       initPlayer();
     }
 
-    (window as any).onYouTubeIframeAPIReady = () => {
+    window.onYouTubeIframeAPIReady = () => {
       initPlayer();
     };
 
@@ -70,41 +69,33 @@ function YouTubePlayer({
     setVideoTime(fetchedTime);
   }, [progressData, videoIndex]);
 
-  const initPlayer = () => {
-    if (!ytReady || videoTime === null) return;
+  const initPlayer = useCallback(() => {
+    if (!ytReady || videoTime === null || playerRef.current) return;
 
-    if (!playerRef.current) {
-      playerRef.current = new window.YT.Player(`youtube-player-${videoId}`, {
-        videoId,
-        playerVars: {
-          autoplay: 1,
-          rel: 0,
+    playerRef.current = new window.YT.Player(`youtube-player-${videoId}`, {
+      videoId,
+      playerVars: {
+        autoplay: 1,
+        rel: 0,
+      },
+      events: {
+        onReady: (event: YT.PlayerEvent) => {
+          event.target.seekTo(videoTime, true);
         },
-        events: {
-          onReady: (event: any) => {
-            event.target.seekTo(videoTime, true);
-          },
-          onStateChange: onPlayerStateChange,
-        },
-      });
-    }
-  };
+        onStateChange: onPlayerStateChange,
+      },
+    });
+  }, [ytReady, videoTime, videoId]);
 
   useEffect(() => {
-    if (ytReady && videoTime !== null) {
-      initPlayer();
-    }
-  }, [ytReady, videoTime]);
+    initPlayer();
+  }, [ytReady, videoTime, initPlayer]);
 
-  useEffect(() => {
-    if (videoTime !== null) {
-      initPlayer();
-    }
-  }, [videoTime]);
-
-  const onPlayerStateChange = (event: any) => {
+  const onPlayerStateChange = (event: YT.OnStateChangeEvent) => {
     if (event.data === window.YT.PlayerState.PLAYING) {
       const duration = playerRef.current?.getDuration();
+
+      if (!duration) return;
 
       if (progressInterval.current) {
         clearInterval(progressInterval.current);
@@ -124,7 +115,6 @@ function YouTubePlayer({
               )
             );
             setShowConfetti(true);
-            // setTimeout(() => setShowConfetti(false), 5000);
           }
         }
       }, 1000);
@@ -185,24 +175,22 @@ function YouTubePlayer({
         className="relative w-full overflow-hidden"
         style={{ paddingBottom: "56.25%" }}
       >
-        <object
+        <div
           id={`youtube-player-${videoId}`}
           className="absolute rounded-xl top-0 left-0 w-full h-full border-0"
-          title={title}
-        >
-          <param name="allowFullScreen" value="true" />
-          <param name="allowscriptaccess" value="always" />
-        </object>
+        />
       </div>
-
-      {/* <div dir="ltr" className="absolute z-10 w-full h-2 bg-white bottom-0">
-        <div
-          className="h-2 bg-yellow-400 transition-all duration-300"
-          style={{ width: `${progressData[videoIndex - 1]?.progress || 0}%` }}
-        ></div>
-      </div> */}
     </div>
   );
 }
 
 export default YouTubePlayer;
+
+{
+  /* <div dir="ltr" className="absolute z-10 w-full h-2 bg-white bottom-0">
+        <div
+          className="h-2 bg-yellow-400 transition-all duration-300"
+          style={{ width: `${progressData[videoIndex - 1]?.progress || 0}%` }}
+        ></div>
+      </div> */
+}
