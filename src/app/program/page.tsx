@@ -43,24 +43,26 @@ export default function Home() {
           key={majles.id}
           className="bg-neutral-800 w-[305px] min-h-max border cursor-pointer hover:bg-neutral-700 transition-all hover:scale-[103%] border-white/20 p-2.5 rounded-xl font-sans"
         >
-          <a href={`/program/${majles.id}`} className="relative">
-            <Image
-              src={`https://sheikh-othman.vercel.app/${majles.id}.png`}
-              alt={`${majles.title}`}
-              className="rounded mb-2 w-full"
-              width={180}
-              height={100}
-            />
-            <span className="absolute bg-black/80 bottom-0 m-2 text-sm py-0.5 px-2 rounded-md">
-              {majles.duration}
-            </span>
-            <div dir="ltr" className="absolute w-full h-1 bg-white bottom-0">
-              <div
-                className="h-1 bg-yellow-400 transition-all duration-300"
-                style={{
-                  width: `${progressData[majles.id - 1]?.progress || 0}%`,
-                }}
-              ></div>
+          <a href={`/program/${majles.id}`}>
+            <div className="relative">
+              <Image
+                src={`https://sheikh-othman.vercel.app/${majles.id}.png`}
+                alt={`${majles.title}`}
+                className="rounded mb-2 w-full "
+                width={180}
+                height={100}
+              />
+              <span className="absolute bg-black/80 bottom-0 m-2 text-sm py-0.5 px-2 rounded-md">
+                {majles.duration}
+              </span>
+              <div dir="ltr" className="absolute w-full h-1 bg-white bottom-0">
+                <div
+                  className="h-1 bg-yellow-400 transition-all duration-300"
+                  style={{
+                    width: `${progressData[majles.id - 1]?.progress || 0}%`,
+                  }}
+                ></div>
+              </div>
             </div>
           </a>
 

@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useProgressContext } from "@/context/ProgressContext";
 import { useCheckContext } from "@/context/CheckContext";
-import Confetti from "react-confetti";
 import Link from "next/link";
 
 declare global {
@@ -140,7 +139,6 @@ function YouTubePlayer({
     <div className="">
       {showConfetti && (
         <div className="absolute inset-0 h-[calc(100%-56px)] flex flex-col items-center justify-center bg-black/80 z-10 rounded-t-xl text-white text-center p-4">
-          <Confetti gravity={0.03} colors={["#facc15"]} />
           <h3 className="text-2xl font-bold">🎉 تهانينا! 🎉</h3>
           {videoIndex === 39 ? (
             <div className="my-4">

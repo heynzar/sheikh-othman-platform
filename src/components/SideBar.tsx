@@ -89,7 +89,9 @@ function SideBar() {
       <button
         onClick={() => setClose(!close)}
         id="open-close-side-bar"
-        className="fixed sm:absolute sm:h-9 sm:w-max border-b sm:border-none sm:rounded-md sm:m-4 py-2 border-white/40 w-full z-10 sm:z-0  bg-neutral-800 p-1 flex items-center justify-center gap-2 hover:bg-neutral-700/70 transition-colors cursor-pointer"
+        className={`${
+          close && "sm:translate-x-[150%]"
+        } fixed transition-transform duration-300 sm:absolute sm:h-9 sm:w-max border-b sm:border-none sm:rounded-md sm:m-4 py-2 border-white/40 w-full z-[1] bg-neutral-800 p-1 flex items-center justify-center gap-2 hover:bg-neutral-700/70 cursor-pointer`}
       >
         <PanelRight strokeWidth={1} className="size-6" />
         <span className="ml-2">إضغط لفتح قائمة المجالس</span>
@@ -112,15 +114,13 @@ function SideBar() {
           )}
         >
           <div
-            style={{ width: `${width}px` }}
-            className={twMerge(
-              "relative min-w-[300px] max-w-[410px] overflow-y-scroll overflow-x-clip flex flex-col justify-between text-sm bg-neutral-800 border-l border-white/10"
-            )}
+            style={{ width: `${width}px`, zIndex: 10 }}
+            className="relative min-w-[300px] max-w-[410px] overflow-y-scroll overflow-x-clip flex flex-col justify-between text-sm bg-neutral-800 border-l border-white/10"
           >
             <button
               onClick={() => setClose(!close)}
               id="open-close-side-bar"
-              className="py-2 w-full z-10  bg-[#2c2c2c] border-b border-white/20 p-1 flex items-center justify-center gap-2 hover:bg-neutral-700/70 transition-colors cursor-pointer"
+              className="py-2 w-full bg-[#2c2c2c] border-b border-white/20 p-1 flex items-center justify-center gap-2 hover:bg-neutral-700/70 transition-colors cursor-pointer"
             >
               <X strokeWidth={1} className="size-6" />
               <span>إضغط لإغلاق قائمة المجالس</span>
