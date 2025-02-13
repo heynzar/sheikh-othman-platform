@@ -144,6 +144,7 @@ function SideBar() {
 
               return (
                 <div
+                  id={`${majles.id}`}
                   key={majles.id}
                   className={`flex items-center  p-4 border-b border-white/20 gap-4  hover:bg-neutral-700 ${
                     isSelected ? "bg-neutral-600" : "bg-transparent"
@@ -156,7 +157,7 @@ function SideBar() {
                     />
                   </div>
 
-                  <a href={`/program/${majles.id}`}>
+                  <a href={`/program/${majles.id}#${majles.id}`}>
                     <SideBarCard
                       title={majles.title}
                       id={majles.id}

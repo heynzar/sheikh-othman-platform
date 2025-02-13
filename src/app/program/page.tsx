@@ -51,7 +51,7 @@ export default function Home() {
           key={majles.id}
           className="bg-neutral-800 w-[305px] min-h-max border cursor-pointer hover:bg-neutral-700 transition-all hover:scale-[103%] border-white/20 p-2.5 rounded-xl font-sans"
         >
-          <a href={`/program/${majles.id}`}>
+          <a href={`/program/${majles.id}#${majles.id}`}>
             <div className="relative">
               <Image
                 src={`https://sheikh-othman.vercel.app/${majles.id}.png`}
@@ -80,7 +80,7 @@ export default function Home() {
               isChecked={majles.isChecked}
               onToggle={() => toggleCheck(majles.id)}
             />
-            <a href={`/program/${majles.id}`}>
+            <a href={`/program/${majles.id}#${majles.id}`}>
               <div>
                 <h2 className="text-lg mb-1">
                   <span>{majles.id}. </span>
